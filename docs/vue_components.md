@@ -12,45 +12,8 @@
 
 💡 方案
 
-```html
-<template>
-  <div id="b-table">
-    <el-table :data="listData" stripe fit border class="el-table">
-      <template v-for="(item, index) in headers">
-        <!-- 展开行功能 -->
-        <el-table-column v-if="item.children" :key="index" type="expand">
-          <template slot-scope="props">
-            <el-table :data="props.row[item.keyName]" stripe>
-              <el-table-column :label="item.label" :width="item.width"
-              :align="item.align" :fixed="item.fixed">
-                <el-table-column v-for="(child, childIndex) in item.children"
-                :label="child.label" :prop="child.keyName" :width="child.width"
-                :align="child.align" :fixed="child.fixed" :key="childIndex"/>
-              </el-table-column>
-            </el-table>
-          </template>
-        </el-table-column>
-        <!-- 复杂的td <采用插槽> -->
-        <slot v-if="item.type === 'slot'" :name="item.slot"/>
-        <!-- 简单的td <单纯文本框> -->
-        <el-table-column v-if="item.type === 'text'"
-        :label="item.label" :prop="item.keyName"
-        :width="item.width" :align="item.align"
-        :fixed="item.fixed" :key="index"/>
-      </template>
-    </el-table>
-    <!-- 分页 -->
-    <el-pagination
-      :current-page.sync="pagination.currentPage"
-      :page-size="pagination.size"
-      :total="pagination.totalCount"
-      background
-      class="b-table-pagination"
-      layout="total, prev, pager, next, jumper"
-      @current-change="handleCurrentChange"/>
-  </div>
-</template>
-```
+![b-table](_media/vue/vue_components/b_table.jpeg)
+
 
 ```javascript
 props: {
@@ -83,7 +46,7 @@ props: {
 
 ```javascript
 // headers配置示例
-const price = [
+const header1 = [
     {
         label: 'td 名称',
         width: 'td 宽度',
@@ -95,6 +58,7 @@ const price = [
     },
     {   ...
         type: 'text',
+        
     },
     {   ...
         children: [
@@ -103,7 +67,7 @@ const price = [
         ],
     },
 ];
-export default price;
+export default header1;
 ```
 
 参考出处如下：
