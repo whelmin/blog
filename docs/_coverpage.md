@@ -1,8 +1,8 @@
-![logo](_media/circle.png)
+![logo](_media/default/favicon.png)
 
 # whelmin
 
-> Never too late to learn
+> Never too late to learn !
 
-[GitHub](https://github.com/whelmin)
-[Get Started](center?id=水平居中)
+[CV](https://whelm.in/cv)
+[Get Started](post/vue/problems)

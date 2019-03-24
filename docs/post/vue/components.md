@@ -1,6 +1,6 @@
-# Vue.js定制组件
+# Vue.js 定制组件
 
-2018年11月18日
+2018 年 11 月 18 日
 
 ### 1. 定制 `element-table`
 
@@ -12,8 +12,7 @@
 
 💡 方案
 
-![b-table](_media/vue/vue_components/b_table.jpeg)
-
+![b-table](../../_media/vue/components/b-table.jpeg)
 
 ```javascript
 props: {
@@ -54,11 +53,11 @@ const header1 = [
         align: 'td 是否居中',
         fixed: false, // td 是否固定列
         type: 'slot', // td 类型, 可选择值 ‘text’，‘slot’
-        slot: 'action', 
+        slot: 'action',
     },
     {   ...
         type: 'text',
-        
+
     },
     {   ...
         children: [

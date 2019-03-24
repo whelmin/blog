@@ -1,6 +1,6 @@
 # Promise
 
-2017年02月20日
+2017 年 02 月 20 日
 
 ## 含义和特点
 
@@ -11,14 +11,14 @@
 **特点：**
 
 对象的状态不受外界影响。`Promise`对象代表一个异步操作，有三种状态：`Pending`（进行中）、`Resolved`（已完成，又称 Fulfilled）和`Rejected`（已失败）。
-Promise对象的状态改变，只有两种可能：从`Pending变为Resolved`和从`Pending变为Rejected`。
-有了Promise对象，就可以将异步操作以同步操作的流程表达出来，**避免了层层嵌套的回调函数**。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。
+Promise 对象的状态改变，只有两种可能：从`Pending变为Resolved`和从`Pending变为Rejected`。
+有了 Promise 对象，就可以将异步操作以同步操作的流程表达出来，**避免了层层嵌套的回调函数**。此外，Promise 对象提供统一的接口，使得控制异步操作更加容易。
 
 **缺点：**
 
-1. 无法取消Promise，一旦新建它就会立即执行，无法中途取消。
-2. 如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。
-3. 当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
+1. 无法取消 Promise，一旦新建它就会立即执行，无法中途取消。
+2. 如果不设置回调函数，Promise 内部抛出的错误，不会反应到外部。
+3. 当处于 Pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
 ## 基本用法
 
@@ -39,16 +39,20 @@ var promise = new Promise(function(resolve, reject) {
 
 ```javascript
 // then 接受两个回调函数作为参数,第二个函数是可选的,不一定要提供
-promise.then(function(value) {
-  // success todo
-}, function(error) {
-  // fail todo
-});
+promise.then(
+  function(value) {
+    // success todo
+  },
+  function(error) {
+    // fail todo
+  },
+);
 
 // 不要在then方法里面定义Reject状态的回调函数（即then的第二个参数），总是使用catch方法。
 // good
 promise
-  .then(function(data) { //cb
+  .then(function(data) {
+    //cb
     // success
   })
   .catch(function(err) {

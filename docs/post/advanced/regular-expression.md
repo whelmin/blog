@@ -1,52 +1,54 @@
 # 初学正则表达式
 
-2017年03月10日
+2017 年 03 月 10 日
 
 ## 定义
 
 正则表达式是用于 匹配 字符串中字符组合的模式。
-在JavaScript中，正则是一个对象。
+在 JavaScript 中，正则是一个对象。
 
 ## 创建（2 种方式）
 
-1. 字面量  `/pattern/flags`
-2. 调用RegExp对象的构造函数 `new RegExp(pattern [,flags])`
+1. 字面量 `/pattern/flags`
+2. 调用 RegExp 对象的构造函数 `new RegExp(pattern [,flags])`
 
-  flags 取值
+flags 取值
 
-  ```
-  flags值    =>   描述
-  g              全局搜索
-  i              不区分大小写搜索
-  m              多行搜索
-  y              执行“粘性”搜索,匹配从目标字符串的当前位置开始，可以使用y标志。
-  ```
+```
+flags值    =>   描述
+g              全局搜索
+i              不区分大小写搜索
+m              多行搜索
+y              执行“粘性”搜索,匹配从目标字符串的当前位置开始，可以使用y标志。
+```
 
 ## 使用
 
-1. 可被用于RegExp的exec、test方法
-  * exec成功返回一个字符串数组、未找到返回null
-  * test返回true或者false
+1. 可被用于 RegExp 的 exec、test 方法
 
-2. String对象的match、replace、search和split方法
-  * 返回一个数组或者在未匹配到时返回null。
-  * 一个在字符串中执行查找匹配的String方法，并且使用替换字符串替换掉匹配到的子字符串。
-  * 一个在字符串中测试匹配的String方法，它返回匹配到的位置索引，或者在失败时返回-1。
-  * 一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的String方法。
+- exec 成功返回一个字符串数组、未找到返回 null
+- test 返回 true 或者 false
+
+2. String 对象的 match、replace、search 和 split 方法
+
+- 返回一个数组或者在未匹配到时返回 null。
+- 一个在字符串中执行查找匹配的 String 方法，并且使用替换字符串替换掉匹配到的子字符串。
+- 一个在字符串中测试匹配的 String 方法，它返回匹配到的位置索引，或者在失败时返回-1。
+- 一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的 String 方法。
 
 ## 编写
 
-1. 使用简单模式，如 /abc/仅仅匹配字符串中字符abc同时出现并且按照这个顺序。
+1. 使用简单模式，如 /abc/仅仅匹配字符串中字符 abc 同时出现并且按照这个顺序。
 
 ```javascript
 "Hi, do you know your abc's?".match(/abc/g); // ["abc"]
-"Grab crab".match(/abc/g); // null
+'Grab crab'.match(/abc/g); // null
 ```
 
-2. 使用特殊字符，如 /ab*c/匹配一个单独的a后面跟了0个或者多个b且后面跟着c的任何字符组合
+2. 使用特殊字符，如 /ab\*c/匹配一个单独的 a 后面跟了 0 个或者多个 b 且后面跟着 c 的任何字符组合
 
 ```javascript
-"cbbabbbbcdebc".match(/ab*c/g); // ["abbbbc"]
+'cbbabbbbcdebc'.match(/ab*c/g); // ["abbbbc"]
 ```
 
 ## 规则
@@ -88,7 +90,7 @@
   \xhh           与代码 hh 匹配字符（两个十六进制数字）
   \uhhhh         与代码 hhhh 匹配字符（四个十六进制数字）。
   \u{hhhh}       (仅当设置了u标志时) 使用Unicode值hhhh匹配字符 (十六进制数字)。
-  ```
+```
 
 ## 实战
 
@@ -96,7 +98,8 @@ key:
 
 ```javascript
 var str, result1, result2;
-str = 'i am {{ fengyue }}, my email is {{ fengyue@alibaba-inc.com }}, my company is {{ alibaba }}';
+str =
+  'i am {{ fengyue }}, my email is {{ fengyue@alibaba-inc.com }}, my company is {{ alibaba }}';
 // your code
 console.log(result1); // ["{{fengyue}}","{{fengyue@alibaba-inc.com}}","{{alibaba}}"]
 console.log(result2); //["fengyue", "fengyue@alibaba-inc.com","alibaba"]
@@ -116,24 +119,24 @@ key:
 
 ```javascript
 var myRe = /d(b+)d/g;
-var myArray = myRe.exec("cdbbdbsbz"); // ['dbbd','bb'] (x)表示锁定x，所以可以没有d
+var myArray = myRe.exec('cdbbdbsbz'); // ['dbbd','bb'] (x)表示锁定x，所以可以没有d
 // 不需要访问正则表达式的属性
-var myArray = /d(b+)d/g.exec("cdbbdbsbz");
+var myArray = /d(b+)d/g.exec('cdbbdbsbz');
 // 通过一个字符串构建正则表达式
-var myRe = new RegExp("d(b+)d", "g");
-var myArray = myRe.exec("cdbbdbsbz");
+var myRe = new RegExp('d(b+)d', 'g');
+var myArray = myRe.exec('cdbbdbsbz');
 ```
 
 answer:
 
 ```javascript
 var re = /(\w+)\s(\w+)/;
-var str = "John Smith";
-var newstr = str.replace(re, "$2, $1");
+var str = 'John Smith';
+var newstr = str.replace(re, '$2, $1');
 console.log(newstr); // "Smith, John"
 // 在匹配到的替换文本中，脚本使用替代的$1,$2表示第一个和第二个括号的子字符串匹配。
 var re = /\w+\s/g;
-var str = "fee fi fo fum";
+var str = 'fee fi fo fum';
 var myArray = str.match(re);
 console.log(myArray); //  ["fee ", "fi ", "fo "]
 ```
