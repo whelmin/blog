@@ -6,7 +6,7 @@
 
 ## 生命周期和钩子函数
 
-**Vue 2.0** 官方整理的生命周期示意图如下
+Vue 2.0 官方整理的生命周期示意图如下
 
 ![lifecycle](../../../_media/vue/lifecycle/main.png)
 
@@ -110,25 +110,34 @@ Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解
 
 ## 单组件生命周期
 
-1. 初始化组件时，执行了`beforeCreate` / `created` / `beforeMount` / `mounted`
-2. 当改变 data 中定义的变量（响应式变量）时，会执行`beforeUpdate` / `updated`
-3. 当切换组件（当前组件未缓存）时，会执行`beforeDestory` / `destroyed`
-4. 初始化和销毁时的生命钩子函数均只会执行一次，`beforeUpdate` / `updated`可多次执行
+  1. 初始化组件时，执行了`beforeCreate` / `created` / `beforeMount` / `mounted`
+
+  2. 当改变 data 中定义的变量（响应式变量）时，会执行`beforeUpdate` / `updated`
+
+  3. 当切换组件（当前组件未缓存）时，会执行`beforeDestory` / `destroyed`
+
+  4. 初始化和销毁时的生命钩子函数均只会执行一次，`beforeUpdate` / `updated` 可多次执行
+
 
 ## 父子组件生命周期
 
-1. 仅当子组件完成挂载(`beforeCreate` / `created` / `beforeMount` / `mounted`)后，父组件才会挂载(`beforeCreate` / `created` / `beforeMount` => **暂停等待** 子组件`mounted`完成)
-2. 当子组件完成挂载后，父组件会主动执行一次 `beforeUpdate` / `updated`钩子函数（仅首次）
-3. 父子组件在 data 变化中是分别监控的，但是在 props 变化中父组件先`beforeUpdate` **暂停等待** 子组件 `beforeUpdate` / `updated` 完成再调用`updated`
-4. 销毁父组件时，先将子组件销毁后才会销毁父组件
+  1. 仅当子组件完成挂载(`beforeCreate` / `created` / `beforeMount` / `mounted`)后，父组件才会挂载(`beforeCreate` / `created` / `beforeMount` => **暂停等待** 子组件`mounted`完成)
+
+  2. 当子组件完成挂载后，父组件会主动执行一次 `beforeUpdate` / `updated`钩子函数（仅首次）
+
+  3. 父子组件在 data 变化中是分别监控的，但是在 props 变化中父组件先`beforeUpdate` **暂停等待** 子组件 `beforeUpdate` / `updated` 完成再调用`updated`
+
+  4. 销毁父组件时，先将子组件销毁后才会销毁父组件
 
 ## 兄弟组件生命周期
 
-1. 组件的初始化（`beforeCreate` / `created` / `beforeMount` ）分开进行，挂载(`mounted`)是从上到下依次进行
-2. 当没有数据关联时，兄弟组件之间的更新和销毁是互不关联的
+  1. 组件的初始化（`beforeCreate` / `created` / `beforeMount` ）分开进行，挂载(`mounted`)是从上到下依次进行
 
-参考出处如下：
+  2. 当没有数据关联时，兄弟组件之间的更新和销毁是互不关联的
 
-https://juejin.im/post/5afd7eb16fb9a07ac5605bb3
 
-https://juejin.im/entry/5aee8fbb518825671952308c
+## 学习参考
+
+  * [laihuamin - vue生命周期详解](https://juejin.im/post/5afd7eb16fb9a07ac5605bb3)
+
+  * [同梦奇缘 - vue 生命周期深入](https://juejin.im/entry/5aee8fbb518825671952308c)
