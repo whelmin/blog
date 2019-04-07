@@ -1,7 +1,7 @@
 # 📝更新记录
 
 ### 2019.04.07
-  1. 新增文章 [前端进阶/理清前端模块化](/post/vue/clear-front-end-modular) - 了解前端模块化进化过程，弄清模块化规范。
+  1. 新增文章 [前端进阶/理清前端模块化](/post/advanced/clear-front-end-modular) - 了解前端模块化进化过程，弄清模块化规范。
   2. 更新文章 [Vue.js/定制组件](/post/vue/components) - 基于 `element-ui` 进行 `form` 组件定制。
   
 ### 2018.11.18
