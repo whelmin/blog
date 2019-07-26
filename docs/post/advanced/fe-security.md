@@ -2,7 +2,7 @@
 
 2017 年 10 月 26 日
 
-> 之前对前端安全不太注重，通过[https://breeswish.org/blog/2014/07/01/common-web-dev-security-issues/](学习这篇文章)，了解到前端安全漏洞主要包括两种（xss，csrf）。
+> 之前对前端安全不太注重，通过学习 [这篇文章](https://breeswish.org/blog/2014/07/01/common-web-dev-security-issues)，了解到前端安全漏洞主要包括两种（XSS，CSRF）。
 
 前端安全主要表现为通过浏览器间接影响到用户数据的安全问题。
 

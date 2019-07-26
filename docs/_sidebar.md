@@ -1,5 +1,5 @@
 * Vue.js
-  * [开发常见问题](post/vue/problems)
+  * [常见问题](post/vue/problems)
   * [定制业务组件](post/vue/components)
   * [梳理生命周期](post/vue/lifecycle)
   
@@ -21,6 +21,7 @@
   * [Promise](post/es6/promise)
   * [实例](post/es6/example)
   * [模块](post/es6/module)
+  * [类 Class](post/es6/class)
 
 * 前端进阶
   * [理清前端模块化](post/advanced/clear-front-end-modular)
