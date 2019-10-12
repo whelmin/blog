@@ -15,13 +15,23 @@
 
 <body>
   <div id="app"></div>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script>
+    const gitalkConfig = {
+      clientID: 'f2ba02ef9df2dbe004c6',
+      clientSecret: 'df78ddca279bd1925c1962707e941e4e31e06b39',
+      repo: 'blog',
+      owner: 'whelmin',
+      admin: ['whelmin'],
+      distractionFreeMode: false,
+    };
     window.$docsify = {
       name: 'whelmin',
       repo: 'whelmin/blog',
       coverpage: true,
       loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
       subMaxLevel: 3,
       plugins: [
         function (hook) {
@@ -35,23 +45,35 @@
           hook.afterEach(function (html) {
             return html + footer;
           })
+        },
+        function (hook, vm) {
+          hook.doneEach(function () {
+            var label, domObj, main, divEle, gitalk;
+            label = vm.route.path.split("/").pop();
+            domObj = Docsify.dom;
+            main = domObj.getNode("#main");
+            Array.apply(
+              null,
+              document.querySelectorAll("div.gitalk-container")
+            ).forEach(function (ele) {
+              ele.remove();
+            });
+            divEle = domObj.create("div");
+            divEle.id = "gitalk-container-" + label;
+            divEle.className = "gitalk-container";
+            divEle.style = "width: " + main.clientWidth + "px; margin: 0 auto 20px;";
+            domObj.appendTo(domObj.find(".content"), divEle);
+            gitalk = new Gitalk(
+              Object.assign(gitalkConfig, { id: !label ? "home" : label })
+            );
+            gitalk.render("gitalk-container-" + label);
+          });
         }
       ]
     };
   </script>
-  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script>
-    const gitalk = new Gitalk({
-      id: location.pathname,
-      clientID: 'f2ba02ef9df2dbe004c6',
-      clientSecret: 'df78ddca279bd1925c1962707e941e4e31e06b39',
-      repo: 'blog',
-      owner: 'whelmin',
-      admin: ['whelmin'],
-      distractionFreeMode: false,
-    });
-  </script>
 </body>
 
 </html>
