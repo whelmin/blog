@@ -4,6 +4,8 @@
   * [梳理生命周期](vue/lifecycle)
   
 * 前端基础
+  * [HTTPS](base/https)
+  * [JS异步编程](base/js-asynchronous-programming)
   * [localStorge,sessionStorge,cookie](base/localStorge)
   * [BFC](base/BFC)
   * [数据存储](base/localStorge)

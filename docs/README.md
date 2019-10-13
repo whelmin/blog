@@ -1,5 +1,13 @@
 ### 📝 更新记录
 
+#### - 2019.10.12
+
+  1. 新增文章 [前端基础/HTTPS](/base/https) - https详解
+
+#### - 2019.09.01
+
+  1. 新增文章 [前端基础/JS异步编程](/base/js-asynchronous-programming) - JS有哪些方式可实现异步编程？
+
 #### - 2019.07.07
 
   1. 新增文章 [ES6/类 Class](/es6/class) - ES6的 `Class` 和 ES5的 `function` 构造函数有什么不同？
