@@ -1,16 +1,14 @@
 * Vue.js
   * [常见问题](vue/problems)
-  * [定制业务组件](vue/components)
-  * [梳理生命周期](vue/lifecycle)
+  * [生命周期](vue/lifecycle)
   
 * 前端基础
   * [HTTPS](base/https)
   * [JS异步编程](base/js-asynchronous-programming)
-  * [localStorge,sessionStorge,cookie](base/localStorge)
-  * [BFC](base/BFC)
-  * [数据存储](base/localStorge)
+  * [localStorge,sessionStorge,cookie](base/storage)
+  * [BFC](base/bfc)
   * [CSS居中](base/center)
-  * [数组去重](base/array-unique)
+  * [数组去重](base/array-deduplication)
   * [判断是否为质数](base/isprime)
   * [This](base/this)
   * [原型,原型链,继承,构造函数,实例](base/prototype)

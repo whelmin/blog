@@ -4,13 +4,12 @@
 
 ### 1. data: {} 和 data() { return {}; }的区别
 
-![problem-1](../../_media/vue/problems/1.png)
+后者写法是为了避免组件复用时，多个实例共享引用同一个数据对象。
 
-[官网文档是这样解释的](https://cn.vuejs.org/v2/api/index.html#data)
+> 前者一般用于示例代码中，不会产生多个组件实例。
+> 组件中使用 Vue 实例的数据对象，只接受 `function` （后者）
 
-后者写法是为了 避免组件复用 时，多个实例共享引用同一个数据对象。
-
-### 2. ajax 是异步请求，props传值问题
+### 2. ajax 是异步请求，props 传值问题
 
 父子组件通过 `props` 传值时，子组件渲染的 `template` 数据会自动响应 `props`
 

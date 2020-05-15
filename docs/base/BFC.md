@@ -1,85 +1,37 @@
-# JavaScript 数组去重
+# BFC
 
-2017 年 10 月 26 日
+2019 年 03 月 24 日
 
-> JavaScript 数组去重是前端面试中经常会问到的一个问题，面试官考察的是解法的`执行效率`以及`时间复杂度`吧。
-> 自己最容易想到的可能就是第一种去重前后两个数组`双重循环`判断。
+## 定义
 
-## 1. 两个数组双重循环判断
+`Block Formatting context`  （块级格式化上下文）
 
-```javascript
-Array.prototype.unique0 = function() {
-  console.info(new Date().getTime() * 1000);
-  // 新建去重后的数组
-  var resultArr = [],
-    isUnique;
-  for (var i = 0, length = this.length; i < length; i++) {
-    // 初始是唯一的
-    isUnique = true;
-    for (var j = 0; j < resultArr.length; j++) {
-      if (this[i] === resultArr[j]) {
-        isUnique = false;
-        break;
-      }
-    }
-    if (isUnique) {
-      resultArr.push(this[i]);
-    }
-  }
-  // console 检查for运算所用时间
-  console.info(new Date().getTime() * 1000);
-  return resultArr;
-};
-```
+页面上的一个隔离的独立容器
 
-## 2. indexOf 判断
+是用于布局块级盒子的一块渲染区域
 
-```javascript
-Array.prototype.unique1 = function() {
-  var resultArr = [];
-  for (var i = 0, length = this.length; i < length; i++) {
-    if (resultArr.indexOf(this[i]) == -1) {
-      // indexOf 表示指定字符串值在字符串的首次出现位置，
-      //-1表示该指定字符串值不存在
-      resultArr.push(this[i]);
-    }
-  }
-  return resultArr;
-};
-```
+容器里面的子元素不会影响到外面元素
 
-## 3. hashtable 判断
+## 触发条件
 
-```javascript
-Array.prototype.unique2 = function() {
-  console.info(new Date().getTime() * 1000);
-  var resultArr = [],
-    // n 为 hash 表
-    n = {};
-  for (var i = 0, length = this.length; i < length; i++) {
-    if (!n[this[i]]) {
-      n[this[i]] = true;
-      resultArr.push(this[i]);
-    }
-  }
-  console.info(new Date().getTime() * 1000);
-  return resultArr;
-};
-```
+1. 根元素，即 `HTML元素`
+2. `float` 不为 none
+3. `overflow` 不为 visible
+4. `display` 的值为 `inline-block`，`table-cell`，`table-caption`
+5. `position` 为 `absolute` 或者 `fixed`
 
-## 4. 先排序再循环判断
+## 布局规则
 
-```javascript
-Array.prototype.unique3 = function() {
-  console.info(new Date().getTime() * 1000);
-  this.sort();
-  var resultArr = [this[0]];
-  for (var i = 1, length = this.length; i < length; i++) {
-    if (this[i] !== resultArr[resultArr.length - 1]) {
-      resultArr.push(this[i]);
-    }
-  }
-  console.info(new Date().getTime() * 1000);
-  return resultArr;
-};
-```
+1. 内部的块级盒子会在垂直方向，一个接一个地放置
+2. box 垂直方向的距离由 margin 决定。属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠。
+3. 每个元素的 margin box 的左边， 与包含块 border box 的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+4. BFC 的区域不会与 float box 重叠
+
+## 应用场景
+
+1. 可以包含浮动元素，用于清除内部浮动
+2. 分散在2个 BFC 中可阻止 margin 重叠
+
+## 参考
+
+[网易考拉前端团队-学习 BFC](https://juejin.im/post/59b73d5bf265da064618731d)

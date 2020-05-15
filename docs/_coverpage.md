@@ -4,5 +4,4 @@
 
 > Never too late to learn !
 
-<!-- [CV](https://whelm.in/cv) -->
 [Get Started](vue/problems)
