@@ -4,4 +4,4 @@
 
 > Never too late to learn !
 
-[Get Started](vue/problems)
+[Get Started](advanced/event-loops)

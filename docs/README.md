@@ -1,5 +1,11 @@
 ### 📝 更新记录
 
+#### - 2020.06.25
+
+  1. 新增文章 [前端基础/页面生命周期和事件流](/base/page-event-flow) - 页面生命周期和事件流
+  2. 更新文章 - 事件循环机制
+  3. 更新文章 - Promise
+
 #### - 2019.10.12
 
   1. 新增文章 [前端基础/HTTPS](/base/https) - https详解
@@ -18,8 +24,8 @@
 
 #### - 2018.10.01
 
-  1. 新增文章 [Vue.js/常见问题](/vue/problems) - `Vue.js` 开发过程中的常见误区。
+  1. 新增文章 [Vue.js/常见问题](/vuejs/problems) - `Vue.js` 开发过程中的常见误区。
 
 #### - 2018.06.27
 
-  1. 新增文章 [Vue.js/生命周期梳理](/vue/lifecycle) - 弄清 `Vue.js` 中的 `lifecycle` 和 `hooks`。
+  1. 新增文章 [Vue.js/生命周期梳理](/vuejs/lifecycle) - 弄清 `Vue.js` 中的 `lifecycle` 和 `hooks`。
