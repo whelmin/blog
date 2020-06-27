@@ -26,21 +26,26 @@
 
 ### 1、宏任务、微任务、调用栈
 
-- 宏任务（Macrotask）：**整体 JavaScript 代码（script 标签内）、全局代码，事件回调（鼠标、键盘、网络事件），XHR 回调，定时器（setTimeout / setInterval / setImmediate）的回调，IO 操作，requestAnimationFrame**
-- 微任务（Microtask）：**更新应用程序状态的任务，包括 Promise 回调，MutationObserver，process.nextTick，Object.observe，async function（异步函数）**
-- 调用栈（call stack）：主线程在调用栈中执行任务。
+- **`宏任务（Macrotask）`**：**整体 JavaScript 代码（script 标签内）、全局代码，事件回调（鼠标、键盘、网络事件），XHR 回调，定时器（setTimeout / setInterval / setImmediate）的回调，IO 操作，requestAnimationFrame**
+- **`微任务（Microtask）`**：**更新应用程序状态的任务，包括 Promise 回调，MutationObserver，process.nextTick，Object.observe，async function（异步函数）**
+- **`调用栈（call stack）`**：主线程在调用栈中执行任务。
 
 ### 2、详细过程
 
 1. **script 标签内代码全部压入调用栈**，依次执行，有返回值时，会从调用栈中弹出。返回值是属于宏任务则被压入宏任务队列，属于微任务则被压入微任务队列。
+
 2. 当调用栈是空的时，所有排队的**微任务会一个接一个**从微任务任务队列中弹出进入调用栈中，然后在调用栈中被执行然后弹出。
+
 3. 如果调用栈和微任务队列都是空的，事件循环会检查宏任务队列里是否还有任务。如果宏任务中还有任务，会从**宏任务队列中弹出一个**进入调用栈，被执行后会从调用栈中弹出，再重复第二步的操作。
 
 ### 3、循环过程
 
 1. **script 里的代码依次被压入调用栈执行然后弹出。根据返回值的类型放入对应的任务队列中。**
+
 2. **调用栈为空时，检查微任务队列是否为空，非空则到 3，为空则到 4**
+
 3. **依次执行微任务中的所有任务，执行完成返回到步骤 2**
+
 4. **先进行一轮视图更新操作（不一定非要更新），检查宏任务队列是否为空，非空则取出一个任务执行。**
 
 ```javascript

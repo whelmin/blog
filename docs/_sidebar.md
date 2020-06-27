@@ -20,6 +20,7 @@
 * 前端基础
 
   * [页面生命周期和事件流](base/page-event-flow)
+  * [HTTP协议的几个版本](base/http-version)
   * [HTTPS](base/https)
   * [JS异步编程](base/js-asynchronous-programming)
   * [localStorge,sessionStorge,cookie](base/storage)
