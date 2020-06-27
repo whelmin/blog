@@ -29,7 +29,7 @@
   * [数组去重](base/array-deduplication)
   * [判断是否为质数](base/isprime)
   * [This](base/this)
-  * [原型,原型链,继承,构造函数,实例](base/prototype)
+  * [原型和原型链](base/prototype)
   * [闭包](base/closure)
 
 * 书籍
