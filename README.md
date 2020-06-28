@@ -1,39 +1,42 @@
-## README
+**English** | [中文](./README.zh-CN.md)
 
-### 一、依赖
+<h2 align="center">whelmin's Blog</h2>
 
-本项目依赖 [docsify-cli](https://www.npmjs.com/package/docsify-cli)，通过此脚手架快速创建项目结构，本地预览文档，利用 [gitalk](https://gitalk.github.io/) 为每篇文章添加评论，自动提交项目 issues，
+### 一、Dependencies
 
-### 二、目录结构
+This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli) , through this scaffold to quickly create a project structure, preview documents locally, use [gitalk](https://gitalk.github.io/) Add comments to each article and automatically submit project issues.
+
+### 二、Tree of project
 
 ```
 .
-├── .gitignore                  // git忽略文件
-├── README.md                   // README.md
-└── docs                        // docsify 初始化目录
-|   ├── _media                  // 静态资源文件，如引用图片
-|   ├── _coverpage.md           // 封面页配置文件
-|   ├── _sidebar.md             // 侧边栏配置文件
-|   ├── .nojekyll               // 用于阻止 GitHub Pages 会忽略掉下划线开头的文件
-|   ├── index.html              // 入口文件，也是配置文件
-|   ├── README.md               // 渲染主页内容
-|   ├── advanced                // 文章 - 前端进阶
-|   ├── base                    // 文章 - 前端基础
-|   ├── book                    // 文章 - 书籍
-|   ├── es6                     // 文章 - es6基础
-|   ├── interesting             // 文章 - 有趣的题目
-|   ├── vuejs                   // 文章 - Vue.js相关
-|   └── ...                     // 其他
+├── .gitignore                  // git ignore config
+├── README.md                   // README
+├── README.zh-CN.md             // README.zh-CN
+└── docs                        // Docsify Initialize the directory
+|   ├── _media                  // Assets
+|   ├── _coverpage.md           // Cover page configuration
+|   ├── _sidebar.md             // Sidebar configuration file
+|   ├── .nojekyll               // Used to prevent GitHub Pages from ignoring files that start with an underscore
+|   ├── index.html              // Entry file, also a configuration file
+|   ├── README.md               // Render homepage content
+|   ├── advanced                // Articles - Advanced Front End
+|   ├── base                    // Articles - Front End Basics
+|   ├── book                    // Articles - Books
+|   ├── es6                     // Articles - ES6 basics
+|   ├── interesting             // Articles - interesting topics
+|   ├── vuejs                   // Articles - Vue.js related
+|   └── ...                     // Other
 
 ```
 
-### 三、本地预览
+### 三、Local development preview
 
 ```
 cd docs/
 docsify serve ./ -o
 ```
 
-### 四、部署
+### 四、Deploy
 
-本项目部署在 `GitHub Pages` 上，GitHub Pages 支持从项目的 `docs/` 文件夹读取文件。
+This project is deployed on `GitHub Pages`. GitHub Pages supports reading files from the project's `docs/` folder.
