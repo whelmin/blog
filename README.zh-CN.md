@@ -14,19 +14,18 @@
 ├── README.md                   // README
 ├── README.zh-CN.md             // README.zh-CN
 └── docs                        // docsify 初始化目录
-|   ├── _media                  // 静态资源文件，如引用图片
-|   ├── _coverpage.md           // 封面页配置文件
-|   ├── _sidebar.md             // 侧边栏配置文件
-|   ├── .nojekyll               // 用于阻止 GitHub Pages 会忽略掉下划线开头的文件
-|   ├── index.html              // 入口文件，也是配置文件
-|   ├── README.md               // 渲染主页内容
-|   ├── advanced                // 文章 - 前端进阶
-|   ├── base                    // 文章 - 前端基础
-|   ├── book                    // 文章 - 书籍
-|   ├── es6                     // 文章 - ES6基础
-|   ├── interesting             // 文章 - 有趣的题目
-|   ├── vuejs                   // 文章 - Vue.js相关
-|   └── ...                     // 其他
+    ├── _media                  // 静态资源文件，如引用图片
+    ├── _coverpage.md           // 封面页配置文件
+    ├── _sidebar.md             // 侧边栏配置文件
+    ├── .nojekyll               // 用于阻止 GitHub Pages 会忽略掉下划线开头的文件
+    ├── index.html              // 入口文件，也是配置文件
+    ├── README.md               // 渲染主页内容
+    ├── advanced                // 文章 - 前端进阶
+    ├── base                    // 文章 - 前端基础
+    ├── book                    // 文章 - 书籍
+    ├── es6                     // 文章 - ES6 基础
+    ├── interesting             // 文章 - 有趣的题目
+    └── vuejs                   // 文章 - Vue.js 相关
 
 ```
 
