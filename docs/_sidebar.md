@@ -7,6 +7,7 @@
 
 * 前端进阶
 
+  * [Babel 是如何工作的](advanced/babel.md)
   * [事件循环机制](advanced/event-loop)
   * [理清前端模块化](advanced/clear-front-end-modular)
   * [前端安全](advanced/fe-security)
