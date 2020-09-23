@@ -4,9 +4,9 @@
 
 ## 模块化的进化
 
-### 1. 全局function
+### 1. 全局 function
 
-  模块化的原始写法，模块就是实现特定功能的一组方法。
+  函数即模块，调用时直接调用。
 
   ```javascript
   function mod1() {
@@ -18,15 +18,15 @@
   mod1();
   ```
 
-  * **定义**: **一个函数可以理解为是一个模块**，调用时直接调用。
-
-  * **缺点**: 污染了全局变量，容易**命名冲突**，模块成员**关系不明确**。
+  **缺点**: 污染了全局变量，容易命名冲突，模块成员关系不明确。
 
 ### 2. Object Method
 
+  模块成员与方法都封装进对象内，调用时以对象属性形式调用。
+
   ```javascript
   const mod1 = {
-    name: 'congmin',
+    name: 'mod1',
     met1() {
       // 模块方法1
     },
@@ -39,19 +39,19 @@
   mod1.met1(); // ✔
   ```
 
-  * **定义**: 模块成员与方法都封装进对象内，调用时以**对象属性形式调用**。
-
-  * **缺点**: 会**暴露模块成员**，**内部属性**可以被外部**改写**。
+  **缺点**: 会暴露模块成员，内部属性可以被外部改写。
 
 ### 3. 立即执行函数（IIFE）
 
-  Immediately-Invoked Function Expression
+  > Immediately-Invoked Function Expression
+
+  立即执行自调用匿名函数（闭包），可实现不暴露内部私有成员。
 
   ```javascript
   const mod1 = (() => {
-    let name = 'congmin';
+    let name = 'mod1';
     let met1 = () => {
-      // 模块方法1（内部保留
+      // 模块方法1（内部保留)
     };
     let met2 = () => {
       // 模块方法2（暴露出去）
@@ -62,23 +62,21 @@
   })();
   console.log(mod1.name); // ✗  undefined
   mod1.met1(); // ✗  undefined is not a function
-  mod1.met2(); // ✔
+  mod1.met2(); // ✔ 能执行
   ```
 
-  * **定义**: 立即执行自调用匿名函数（**闭包**），可实现不暴露内部私有成员。
-
-  * **缺点**: 闭包会带来**内存泄漏**问题。
-
-  * **问题**: 模块间的**依赖关系**该如何处理？
+  **缺点**: 闭包会带来内存泄漏问题。
 
 ### 4. 立即执行函数（IIFE） + 模块依赖
+
+  一个模块需引用另一个模块时，可通过自调用函数的参数传入依赖变量。
 
   ```javascript
   const mod0 = jQuery;
   const mod1 = ((window, $) => {
-    let name = 'congmin';
+    let name = 'mod1';
     let met1 = () => {
-      // 模块方法1（内部）
+      // 模块方法1（内部保留）
     };
     let met2 = () => {
       // 模块方法2（暴露出去）
@@ -89,10 +87,7 @@
     };
   })(window, mod0);
   ```
-
-  * **定义**: 一个模块需引用另一个模块时，可通过自调用函数的**参数传入**依赖**变量**。
-
-  * **缺点**: 请求**过多**、依赖**模糊**、难以**维护**。
+  **缺点**: 请求过多、依赖模糊、难以维护。
 
   ```html
   <!-- mod1 没有依赖 -->
@@ -106,7 +101,7 @@
   <!-- mod5 依赖于 mod2 mod3 mod4 -->
   <script src="mod5.js"></script>
   <script type="text/javascript">
-      mod5.met(); // 调用 mod5 方法
+    mod5.met(); // 调用 mod5 方法
   </script>
   ```
 
@@ -116,11 +111,13 @@
 
 ### 1. IIFE 规范
 
+  立即自执行导出变量。
+
   ```javascript
   const mod1 = (() => {
-    let name = 'congmin';
+    let name = 'mod1';
     let met1 = () => {
-      // 模块方法1（内部）
+      // 模块方法1（内部保留）
     };
     let met2 = () => {
       // 模块方法2（暴露）
@@ -134,12 +131,15 @@
   mod1.met2(); // ✔
   ```
 
-  * **定义**: 立即自执行导出变量。
-
 ### 2. AMD 规范(require.js)
 
+  通过 `define` 方法，将代码定义为模块；通过 `require` 方法，实现模块加载。适合于浏览器环境，支持异步。
+
+  依赖前置。
+
   ```javascript
-  // mod1.js 定义AMD模块 mod1
+  // mod1.js 
+  // 定义 AMD 模块 mod1
   define([jQuery], ($) => {
     let met1 = () => $('body');
     return { met1 };
@@ -157,8 +157,13 @@
 
 ### 3. CMD 规范(sea.js)
 
+  通过 `define` 方法，将代码定义为模块；通过 `require` 方法，实现模块加载。适合于浏览器环境，支持异步。
+
+  依赖就近。
+
   ```javascript
-  // mod1.js 定义CMD模块 mod1
+  // mod1.js 
+  // 定义 CMD 模块 mod1
   define((require, exports, module) => {
     const $ = require('jQuery');
     let met1 = () => $('body');
@@ -178,21 +183,19 @@
   </script>
   ```
 
-  * **基本思想**: 通过 `define` 方法，将代码定义为模块；通过 `require` 方法，实现模块加载。适合于浏览器环境，支持异步。
-  * **二者区别**: AMD：依赖前置, CMD：依赖就近
-
 ### 4. CommonJS 规范(node.js)
 
   在 `Node.js` 中的模块采用 `CommonJS` 规范，每个文件就是一个模块，有自己的作用域。
 
   在一个文件里面定义的变量、函数、类，都是**私有**的，对其他文件不可见。
 
-  * 在**服务器端**，模块的加载是运行时**同步加载**的，并支持加载**npm(node_modules)中的依赖包**；
+  * 在**服务器端**，模块的加载是运行时**同步加载**的，并支持加载 **npm(node_modules)中的依赖包**；
 
-  * 在**浏览器端**，模块需要**提前编译**打包处理。(搭配browserify/grunt/gulp/webpack/rollup等自动化工具)
+  * 在**浏览器端**，模块需要**提前编译**打包处理。(搭配 browserify / grunt / gulp / webpack / rollup 等自动化工具)
 
   ```javascript
-  // mod1.js 定义CommonJS模块 mod1
+  // mod1.js
+  // 定义 CommonJS 模块 mod1
   const $ = require('jquery');
   let met1 = () => $('body');
   module.exports = { met1 };
@@ -204,15 +207,15 @@
   mod1.met1();
   ```
 
-
-### 5. ES Module 规范(es6)
+### 5. ES Module 规范(ES6)
 
   `ES6` 带来了 `ES Module`，其设计思想是尽量静态化，使得编译打包时就确定模块间依赖关系，以及变量的输入和输出。这是不同于 `CommonJS` 和 `AMD` 规范的，只能在运行时动态确定依赖内容。
 
   因此 `ES Module` 的 `import` 必须写在文件顶部，而 `CommonJS` 的 `require` 可写在任意地方。
 
   ```javascript
-  // mod1.js 定义ES模块 mod1
+  // mod1.js
+  // 定义ES模块 mod1
   import $ from 'jquery';
   let met1 = () => $('body');
   export default { met1 };
@@ -224,7 +227,7 @@
   mod1.met1();
   ```
 
-  * `ES6` 模块输出的是值的引用，而 `CommonJS` 是值的拷贝。
+  > `ES6` 模块输出的是值的引用，而 `CommonJS` 是值的拷贝。
 
   * 值得注意的是，`Node.js` 虽然支持了大部分 `ES6` 语法，**但 `Node.js` 目前仍然未直接支持 `ES Module` 规范**，仍需 `Babel` 转译为 `CommonJS` 规范。
 
@@ -232,7 +235,7 @@
 
   当在开发公共库时，不同的库使用者可能用着各种不同的模块化规范，而每种规范中模块的定义与返回都不一样，怎么办？
 
-  * **定义**： `UMD` 是兼容多种模块化规范导出的一种规范，其打包后的格式大致为：
+  `UMD` 是兼容多种模块化规范导出的一种规范，其打包后的格式大致为：
 
   ```javascript
   // UMD 导出格式
@@ -248,11 +251,14 @@
         return /* something */;
   });
   ```
-  引入 `UMD` 规范的公共库时，支持直接使用 `CommonJS` / `AMD` / `IIFE <script>` 标签进行引入
 
-  但 `UMD` 不直接兼容 `ES Module` 规范。
+  引入 `UMD` 规范的公共库时，支持直接使用 `CommonJS` / `AMD` / `IIFE <script>` 标签进行引入。
 
-  但好在，除了 `UMD`，工程化打包工具及其插件也是支持各个模块引入规范的转换。（例如：利用 `Webpack`，`ES6` 与 `CommonJS` 的模块引入区别几乎是无感的）
+  可参考 [Vue 2.x 的源码](https://unpkg.com/vue@2.6.12/dist/vue.js)、[React的源码](https://unpkg.com/react@16.7.0/umd/react.production.min.js)
+
+  > 但 `UMD` 不直接兼容 `ES Module` 规范。
+  > 但好在，除了 `UMD`，工程化打包工具及其插件也是支持各个模块引入规范的转换。（例如：利用 `Webpack`，`ES6` 与 `CommonJS` 的模块引入区别几乎是无感的）
+
 
 ## CommonJS vs ES Module
 
@@ -260,8 +266,8 @@
 
 ```javascript
 // mod.common.js
-const firstName = 'cong';
-const lastName = 'min';
+const firstName = 'meimei';
+const lastName = 'han';
 const getName = () => firstName + lastName;
 module.exports = { firstName, getName };
 ```
@@ -270,8 +276,8 @@ module.exports = { firstName, getName };
 
 ```javascript
 // mod.esm.js
-const firstName = 'cong';
-const lastName = 'min';
+const firstName = 'meimei';
+const lastName = 'han';
 const getName = () => firstName + lastName;
 export default { firstName, getName };
 ```
@@ -287,19 +293,19 @@ console.log(mod_esm);
 ```
 👇👇👇
 
-```
+```javascript
 // console.log(mod_common);
 Object {
-  firstName: 'cong',
+  firstName: 'meimei',
   getName: Function getName(),
 }
 ```
 
-```
+```javascript
 // console.log(mod_esm);
 Module {
   default: Object {
-    firstName: 'cong',
+    firstName: 'meimei',
     getName: Function getName(),
   },
   __esModule: true
@@ -317,23 +323,23 @@ console.log(mod_esm);
 ```
 👇👇👇
 
-```
+```javascript
 // console.log(mod_common);
 Object {
-  firstName: 'cong',
+  firstName: 'meimei',
   getName: Function getName(),
 }
 ```
 
-```
+```javascript
 // console.log(mod_esm);
 Object {
-  firstName: 'cong',
+  firstName: 'meimei',
   getName: Function getName(),
 }
 ```
 
-### 3. 总结单个导出模块2种规范的区别
+### 3. 总结单个导出模块 2 种规范的区别
 
   `CJS` 规范通过 `module.exports` 所导出的值为 `原值的拷贝` ；
   `ESM` 规范通过 `export` 所导出的值为 `Module` 对象 。
@@ -345,12 +351,12 @@ Object {
   
 ### 4. 多个导出的模块
 
-#### 4.1 CommonJS 规范 的 多个导出模块
+#### 4.1 CommonJS 规范的多个导出模块
 
 ```javascript
 // mod.common.js
-const firstName = 'cong';
-const lastName = 'min';
+const firstName = 'meimei';
+const lastName = 'han';
 const getName = () => firstName + lastName;
 module.exports = { firstName, getName };
 module.exports.lastName = lastName;
@@ -359,9 +365,9 @@ module.exports.lastName = lastName;
 ```javascript
 // mod_common module.exports
 Object {
-  firstName: 'cong',
+  firstName: 'meimei',
   getName: Function getName(),
-  lastName: 'min'
+  lastName: 'han'
 }
 ```
 
@@ -382,12 +388,12 @@ import imp_mod_common from './mod_common';
 import { lastName, firstName, getName } from './mod_common';
 ```
 
-#### 4.2 ES Module 规范 的 多个导出模块
+#### 4.2 ES Module 规范的多个导出模块
 
 ```javascript
 // mod.esm.js
-const firstName = 'cong';
-const lastName = 'min';
+const firstName = 'meimei';
+const lastName = 'han';
 const getName = () => firstName + lastName;
 export default { firstName, getName };
 export { lastName };
@@ -397,10 +403,10 @@ export { lastName };
 // mod_esm export
 Module {
   default: Object {
-    firstName: 'cong',
+    firstName: 'meimei',
     getName: Function getName(),
   },
-  lastName: 'min',
+  lastName: 'han',
   __esModule: true
 }
 ```
@@ -414,12 +420,11 @@ req_mod_esm.default.getName(); // 调用 getName
 
 // EMS规范引用 mod_esm：(不可使用解构)
 import imp_mod_esm from './mod_esm';
-// 得到的值 imp_mod_esm 与 req_mod_esm.default 是相等的
-import { lastName } from './mod_esm'; // 获取 lastName
 const firstName = imp_mod_esm.firstName; // 获取 firstName
 imp_mod_esm.getName(); // 调用 getName
+// 得到的值 imp_mod_esm 与 req_mod_esm.default 是相等的
+import { lastName } from './mod_esm'; // 获取 lastName
 ```
-
 
 ### 5. import 用法所对应的利用解构的 CommonJS 写法
 
@@ -474,7 +479,7 @@ import lodash from 'lodash/lodash.js';
 const lodash = require('lodash/lodash.js');
 ```
 
-通过代码可以看到 `lodash.js` 是打包后的 UMD 规范 的全量文件，因此 `lodash.js` 可通过工程化工具直接引入打包，不需要经过 Babel 转译。
+通过代码可以看到 `lodash.js` 是打包后的 UMD 规范的全量文件，因此 `lodash.js` 可通过工程化工具直接引入打包，不需要经过 Babel 转译。
 
 **思考**：但是，这种方式只能全量引入，如果要按需引入某个功能该怎么办？
 
@@ -494,7 +499,6 @@ import { chunk, map } from 'lodash';
 ```
 
 ![babel-plugin-import](../../../_media/advanced/modular/babel-plugin-import.png)
-
 
 #### 2.3 或利用 ES Module 的 tree-shaking
 

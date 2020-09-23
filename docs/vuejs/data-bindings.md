@@ -11,41 +11,52 @@
 多个`观察订阅者`、`一个发布者`、`一个存储观察订阅者回调函数的对象`
 
 ```javascript
-class Event { 
+// 观察对象
+class Watcher {
+	constructor(name) {
+		this.name = name;
+	}
+	update(data) {
+		console.log(`我是${this.name}, 收到通知了，${data}...`);
+	}
+}
+// 依赖对象
+class Observer {
 	constructor() {
-		// 存储观察者回调函数的对象
-		this._message = {}; 
+		this.people = [];
 	}
-	// 监听/注册/订阅，注意 eventHandler 匿名函数注销会失败
-	on(name, eventHandler) {
-        if (!eventHandler.name) console.warn('回调函数是匿名函数，注销时会失败，建议你使用具名函数');
-		(this._message[name] || (this._message[name] = [])).push(eventHandler);
+	// 收集观察者
+	add(person) {
+		this.people.push(person);
 	}
-	// 注销，注意 eventHandler 匿名函数注销会失败
-	off(name, eventHandler) {
-		if (this._message[name]) {
-			// 位运算，有符号右移，undefined >>> 0 = 0, null >>> 0 = 0
-            // 参考 https://github.com/developit/mitt/blob/master/src/index.ts
-			this._message[name].splice(this._message[name].indexOf(eventHandler) >>> 0, 1);
-		}
+	// 移除指定观察者
+	remove(person) {
+		// 找到索引
+		let index = this.people.findIndex(e => person.name === e.name);
+		index > -1 && this.people.splice(index, 1);
 	}
-	// 触发/发布
-	emit(name, ...args) {
-		(this._message[name] || []).slice().forEach((handler) => { handler(...args); });
+	// 派发更新给所有观察者
+	notify(data) {
+		this.people.forEach(e => e.update(data));
 	}
 }
 
-function clickHandler2(str) {
-	console.log('观察者模式', str);
-}
+const observer = new Observer();
+const watcher1 = new Watcher('whelmin NO.1');
+const watcher2 = new Watcher('whelmin NO.2');
+observer.add(watcher1);
+observer.add(watcher2);
 
-const event = new Event();
-event.on('click', function(e) { console.log(e) }); // console.warn
-event.on('click', clickHandler2);
-event.emit('click', 'hello world');
-console.log('event._message.length', event._message['click'].length); // 2
-event.off('click', function(e) { console.log(e) });
-console.log('event._message.length', event._message['click'].length); // 2
+// 5 秒后派发更新给所有的观察者
+setTimeout(function() {
+	observer.notify('iPhone 11 到货了');
+}, 5000);
+
+// 10 秒后派发更新给所有的观察者
+setTimeout(function() {
+	observer.remove(watcher2);
+	observer.notify('iPhone 12 到货了');
+}, 10000);
 ```
 
 ## 二、Vue.js
@@ -72,7 +83,7 @@ class DiyVue {
         this.options = options;
         this.$el = document.querySelector(options.el);
         this.$data = options.data;
-        // 指令与 watcher 依赖池
+        // 指令与 Watcher 依赖池
         this._directives = {};
         // 数据劫持
         this._observe(this.$data);
@@ -139,6 +150,7 @@ class DiyVue {
 ### 2-2. 新建一个 Watcher 类
 
 ```javascript
+// 观察者
 class Watcher {
     /*
     * el {String} 指令作用的 DOM 元素

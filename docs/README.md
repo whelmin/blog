@@ -4,6 +4,8 @@
 
   - 新增文章 [前端进阶 / Babel](/advanced/babel.md)
     - Babel 是如何工作的，AST 是如何生成，再被转换，最后生成目标浏览器能正常解析的 JavaScript 脚本
+  - 新增文章 [Hello Vue 3.0](/vue@next/optimization)
+    - 对 Vue 3.0 的优化点做了大致梳理，为日后学习源码和项目升级做准备
 
 #### 2020.08
 
