@@ -6,9 +6,17 @@
 
 ## 一、自己设计实现观察者模式
 
-### 1-1. 分解观察者模式的角色和对象
+### 1-1. 分解观察者模式的角色
 
-多个`观察订阅者`、`一个发布者`、`一个存储观察订阅者回调函数的对象`
+`多个观察者`、`一个观察者们依赖的对象`
+
+### 1-2. 观察者模式的各个角色具有的方法
+
+`观察者们`：update
+
+`依赖对象`：add、remove、notify
+
+### 1-3. 代码实现
 
 ```javascript
 // 观察对象
@@ -35,7 +43,7 @@ class Observer {
 		let index = this.people.findIndex(e => person.name === e.name);
 		index > -1 && this.people.splice(index, 1);
 	}
-	// 派发更新给所有观察者
+	// 派发更新给现有的观察者们
 	notify(data) {
 		this.people.forEach(e => e.update(data));
 	}
@@ -47,15 +55,15 @@ const watcher2 = new Watcher('whelmin NO.2');
 observer.add(watcher1);
 observer.add(watcher2);
 
-// 5 秒后派发更新给所有的观察者
+// 5 秒后派发更新给现有的观察者们
 setTimeout(function() {
-	observer.notify('iPhone 11 到货了');
+	observer.notify('iPhone 11 到货了');  // 会执行 watcher1.update、watcher2.update
 }, 5000);
 
-// 10 秒后派发更新给所有的观察者
+// 10 秒后派发更新给现有的观察者们
 setTimeout(function() {
 	observer.remove(watcher2);
-	observer.notify('iPhone 12 到货了');
+	observer.notify('iPhone 12 到货了'); // 会执行 watcher1.update
 }, 10000);
 ```
 
