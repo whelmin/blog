@@ -129,7 +129,6 @@ console.log("script end");
 ```
 
 ```javascript
-// 18年-shopee
 setTimeout(() => { console.log('a'); }, 0);
 Promise.resolve().then(() => {
 	console.log('b');
@@ -151,7 +150,6 @@ Promise.resolve().then(() => {
 ```
 
 ```javascript
-// 20年-shopee
 console.log('script start');
 setTimeout(function () {
 		console.log('timeout 1')
@@ -199,7 +197,6 @@ console.log('script end');
 ```
 
 ```javascript
-// 18年-大疆
 async function fun1 () {
 		console.log('fun1 start');
 		await fun2();
