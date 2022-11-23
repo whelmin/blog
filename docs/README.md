@@ -1,8 +1,8 @@
-## Vue.js 3
+## Vue 3
 
   - [Hello Vue 3.0](vue@next/optimization)
 
-## Vue.js 2
+## Vue 2
 
   - [数据绑定](vue2/dataBind)
   - [nextTick](vue2/nextTick)

@@ -222,5 +222,3 @@ setTimeout(() => {
 ```
 
 ### 2-4. 线上地址演示
-
-[vue2-observer](https://fe.whelm.in/vue2-observer)
