@@ -1,6 +1,6 @@
 [English](./README.md) | **中文**
 
-<h2 align="center">whelmin's Blog</h2>
+<h2 align="center">Hui Wen's Blog</h2>
 
 ### 一、依赖
 

@@ -1,6 +1,6 @@
 **English** | [中文](./README.zh-CN.md)
 
-<h2 align="center">whelmin's Blog</h2>
+<h2 align="center">Hui Wen's Blog</h2>
 
 ### 一、Dependencies
 

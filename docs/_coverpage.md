@@ -1,7 +1,9 @@
-![logo](_media/default/favicon.png)
+![logo](_media/avatar.png)
 
-# whelmin
+# Hui Wen
 
-> Never too late to learn !
+> a Web Front-End Developer.
 
-[Get Started](advanced/event-loop)
+[Get Started](/README)
+[Get Started](/README)
+[Get Started](/README)

@@ -1,55 +1,52 @@
-# 📝 更新记录
+## Vue.js 3
 
-#### 2020.09
+  - [Hello Vue 3.0](vue@next/optimization)
 
-  - 新增文章 [前端进阶 / Babel](/advanced/babel.md)
-    - Babel 是如何工作的，AST 是如何生成，再被转换，最后生成目标浏览器能正常解析的 JavaScript 脚本
-  - 新增文章 [Hello Vue 3.0](/vue@next/optimization)
-    - 对 Vue 3.0 的优化点做了大致梳理，为日后学习源码和项目升级做准备
+## Vue.js 2
 
-#### 2020.08
+  - [数据绑定](vue2/dataBind)
+  - [nextTick](vue2/nextTick)
+  - [常见问题](vue2/problems)
+  - [生命周期](vue2/lifecycle)
 
-  - 新增文章 [Vue.js / Data Bindings](/vuejs/data-bindings)
-    - Vue.js 如何利用观察者模式完成数据双向绑定
+## React
 
-#### 2020.06
+## 前端进阶
 
-  - 新增文章 [前端基础 / 页面生命周期和事件流](/base/page-event-flow)
-    - 页面生命周期和事件流
-  - 更新文章 [事件循环机制](advanced/event-loop)
-  - 更新文章 [ES6 / Promise](es6/promise)
+  - [Babel 是如何工作的](advanced/babel.md)
+  - [事件循环机制](advanced/event-loop)
+  - [理清前端模块化](advanced/clear-front-end-modular)
+  - [前端安全](advanced/fe-security)
+  - [正则表达式](advanced/regular-expression)
 
-#### 2020.05
+## ES6
 
-  - 新增文章 [前端基础 / HTTP协议的几个版本](/base/http-version)
-    - HTTP 1.0 / 1.1 / 2 / 3
+  - [Promise](es6/promise)
+  - [实例](es6/example)
+  - [模块](es6/module)
+  - [类 Class](es6/class)
 
-#### 2019.10
+## 前端基础
 
-  - 新增文章 [前端基础 / HTTPS](/base/https)
-    - https详解
+  - [页面生命周期和事件流](base/page-event-flow)
+  - [HTTP协议的几个版本](base/http-version)
+  - [HTTPS](base/https)
+  - [JS异步编程](base/js-asynchronous-programming)
+  - [localStorge,sessionStorge,cookie](base/storage)
+  - [BFC](base/bfc)
+  - [CSS居中](base/center)
+  - [数组去重](base/array-deduplication)
+  - [判断是否为质数](base/isprime)
+  - [This](base/this)
+  - [原型和原型链](base/prototype)
+  - [闭包](base/closure)
 
-#### 2019.09
+## 书籍
 
-  - 新增文章 [前端基础 / JS异步编程](/base/js-asynchronous-programming)
-    - JS有哪些方式可实现异步编程？
+  - [Tomxu深入理解JavaScript](book/tomxu-javascript)
 
-#### 2019.07
 
-  - 新增文章 [ES6 / 类 Class](/es6/class)
-    - ES6的 `Class` 和 ES5的 `function` 构造函数有什么不同？
+## 有趣的编程题目
 
-#### 2019.04
-
-  - 新增文章 [前端进阶 / 理清前端模块化](/advanced/clear-front-end-modular)
-    - 了解前端模块化进化过程，弄清模块化规范。
-
-#### 2018.10
-
-  - 新增文章 [Vue.js / 常见问题](/vuejs/problems)
-    - `Vue.js` 开发过程中的常见误区。
-
-#### 2018.06
-
-  - 新增文章 [Vue.js / 生命周期梳理](/vuejs/lifecycle)
-    - 弄清 `Vue.js` 中的 `lifecycle` 和 `hooks`。
+  - [左上角到右下角的最短网格路径](interesting/shortest-way-in-grid)
+  - [一些有趣的编程题](interesting/interesting)

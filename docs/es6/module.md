@@ -23,10 +23,10 @@ JavaScript世界一直没有模块概念，`ES6之前`是由社区给出了`2种
 ## export
 
 ```javascript
-export let name = 'whelmin';
+export let name = 'hui';
 export let age = 18;
 
-let name = 'whelmin';
+let name = 'hui';
 let age = 18;
 export {name, age};
 

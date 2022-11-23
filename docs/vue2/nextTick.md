@@ -31,7 +31,7 @@ msg 更新时，其关联 DOM 不会立马更新，此时的 $refs.msgDiv.innerH
 
 ```javascript
 this.$nextTick(() => {
-	this.$refs.whelmin.innerText = "created hooks";
+	this.$refs.hui.innerText = "created hooks";
 });
 ```
 
@@ -39,7 +39,7 @@ this.$nextTick(() => {
 
 ```javascript
 this.$nextTick().then(() => {
-  this.$refs.whelmin.innerText = "beforeMount hooks";
+  this.$refs.hui.innerText = "beforeMount hooks";
 });
 ```
 

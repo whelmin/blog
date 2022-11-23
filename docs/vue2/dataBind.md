@@ -52,8 +52,8 @@ class Observer {
 }
 
 const appleStore = new Subject(); // 某家苹果门店
-const observer1 = new Observer('whelmin1'); // 排在第一位的客户
-const observer2 = new Observer('whelmin2'); // 排在第二位的客户
+const observer1 = new Observer('hui1'); // 排在第一位的客户
+const observer2 = new Observer('hui2'); // 排在第二位的客户
 appleStore.add(observer1);
 appleStore.add(observer2);
 
@@ -73,11 +73,11 @@ setTimeout(function() {
 
 官方文档上晒过一张图，表示 `Vue` 核心部分是 `MVVM` 框架中的 `ViewModel` 层，用于数据绑定，监听 `DOM` 中的事件，已达到“视图交互触发数据更新，数据变更驱动视图更新” 的目的。
 
-![Vuejs/MVVM](./../_media/vuejs/mvvm.png)
+![vue2/MVVM](./../_media/vue2/mvvm.png)
 
 那 ViewModel 层是如何实现数据驱动视图的呢？官方也有一张图说明，即在组件执行 render 函数时，（生成 Virtual DOM Tree 时），会将使用到的数据（Touch）对象通过 Object.defineProperty 转换成 getter 和 setter 函数，调用 getter 函数时收集至 Watcher 依赖池，触发 setter 函数时通知 Watcher 依赖池进行 re-render 操作。
 
-![Vuejs/data](./../_media/vuejs/data.png)
+![vue2/data](./../_media/vue2/data.png)
 
 利用观察者模式完成数据双向绑定。
 
