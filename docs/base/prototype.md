@@ -34,7 +34,7 @@ const dog1 = new Dog('小白');
 
 那么 `dog1` 和 `Dog`、`Dog.prototype` 的关系是：
 
-![dog1的原型](../_media/base/prototype/dog1.png)
+![dog1的原型](./_media/prototype/dog1.png)
 
 ```javascript
 dog1.__proto__ === Dog.prototype     // true
@@ -42,7 +42,7 @@ dog1.constructor === Dog             // true
 Dog.prototype.constructor === Dog    // true
 ```
 
-![例子中的原型链](../_media/base/prototype/protoChain.png)
+![例子中的原型链](./_media/prototype/protoChain.png)
 
-![存在2条原型链](../_media/base/prototype/protoChain2.png)
+![存在2条原型链](./_media/prototype/protoChain2.png)
 

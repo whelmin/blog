@@ -14,7 +14,6 @@
 ├── README.md                   // README
 ├── README.zh-CN.md             // README.zh-CN
 └── docs                        // docsify 初始化目录
-    ├── _media                  // 静态资源文件，如引用图片
     ├── _coverpage.md           // 封面页配置文件
     ├── _sidebar.md             // 侧边栏配置文件
     ├── .nojekyll               // 用于阻止 GitHub Pages 会忽略掉下划线开头的文件

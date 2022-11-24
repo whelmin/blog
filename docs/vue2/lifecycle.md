@@ -10,13 +10,13 @@
 
 Vue 2.0 官方整理的生命周期示意图如下：
 
-![lifecycle](../../_media/vue2/lifecycle.png)
+![lifecycle](./_media/lifecycle.png)
 
 ### 1-2. 各个阶段能拿到的实例属性
 
 Vue 2.0 各个阶段能拿到的实例属性如下表格所示：
 
-![vm property](../../_media/vue2/hooks-vm-property.png)
+![vm property](./_media/hooks-vm-property.png)
 
 ## 2. 各个生命周期阶段一般做哪些操作
 

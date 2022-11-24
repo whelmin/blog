@@ -6,11 +6,11 @@
 
 ### 1、更好的代码管理方式：monorepo
 
-![monorepo](./../_media/vue@next/WX20200922-164931@2x.png)
+![monorepo](./_media/WX20200922-164931@2x.png)
 
 ### 2、有类型的 JavaScript：TypeScript
 
-![TypeScript](./../_media/vue@next/WX20200922-190124@2x.png)
+![TypeScript](./_media/WX20200922-190124@2x.png)
 
 ## 二、性能优化
 

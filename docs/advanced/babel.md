@@ -60,7 +60,7 @@ Plugins / Presets 调用优先级
 
 根据转换后的抽象语法树再**生成**代码字符串以及源码映射（sourcemaps）。这个阶段会用到 **[@babel/generator](https://www.babeljs.cn/docs/babel-generator)**
 
-![Babel工作过程](./../_media/advanced/babel/Babel工作过程.png)
+![Babel工作过程](./_media/Babel工作过程.png)
 
 #### 4. 一个例子
 

@@ -498,7 +498,7 @@ import map from 'lodash/map';
 import { chunk, map } from 'lodash';
 ```
 
-![babel-plugin-import](../../../_media/advanced/modular/babel-plugin-import.png)
+![babel-plugin-import](./_media/babel-plugin-import.png)
 
 #### 2.3 或利用 ES Module 的 tree-shaking
 

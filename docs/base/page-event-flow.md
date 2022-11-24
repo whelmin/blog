@@ -149,7 +149,7 @@ document.addEventListener('readystatechange', () => console.log(document.readySt
 
 DOM2 级事件规定的事件流包括三个阶段：***事件捕获阶段、处于目标阶段、事件冒泡阶段***。
 
-![event-flow](../../_media/base/event-flow.png)
+![event-flow](./_media/event-flow.png)
 
 ### 2-2-1. 事件捕获
 

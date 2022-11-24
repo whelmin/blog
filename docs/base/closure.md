@@ -138,4 +138,4 @@ c.fun(3);
 
 ## 面试题的答案
 
-![answer](../../_media/base/closure.jpg)
+![answer](./_media/closure.jpg)

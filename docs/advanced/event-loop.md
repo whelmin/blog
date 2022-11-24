@@ -66,7 +66,7 @@ console.log('end');
 // start => end => promise1 => promise2 => setTimeout
 ```
 
-![事件循环机制执行动画](../_media/advanced/event-loop/excute-animate.gif)
+![事件循环机制执行动画](./_media/excute-animate.gif)
 
 首先，全局代码压入调用栈执行，打印 `start`；
 

@@ -102,7 +102,7 @@ var otherFoo = bar.baz;
 otherFoo(); // global(base: global,propertyName: 'otherFoo')
 ```
 
-![this](../../_media/base/this.jpeg)
+![this](./_media/this.jpeg)
 
 构造器调用的函数中的 this
 

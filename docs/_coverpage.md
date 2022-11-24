@@ -1,9 +1,7 @@
-![logo](_media/avatar.png)
+![logo](avatar.png)
 
 # Hui Wen
 
-> a Web Front-End Developer.
+> a Web Front-End Developer. ✌️
 
-[Get Started](/README)
-[Get Started](/README)
 [Get Started](/README)

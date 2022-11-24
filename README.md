@@ -14,7 +14,6 @@ This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli)
 ├── README.md                   // README
 ├── README.zh-CN.md             // README.zh-CN
 └── docs                        // Docsify Initialize the directory
-    ├── _media                  // Assets
     ├── _coverpage.md           // Cover page configuration
     ├── _sidebar.md             // Sidebar configuration file
     ├── .nojekyll               // Used to prevent GitHub Pages from ignoring files that start with an underscore
