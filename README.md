@@ -1,12 +1,12 @@
 **English** | [中文](./README.zh-CN.md)
 
-<h2 align="center">Hui Wen's Blog</h2>
+<h1 align="center">Hui Wen's Blog</h1>
 
-### 一、Dependencies
+## Dependencies
 
-This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli) , through this scaffold to quickly create a project structure, preview documents locally, use [gitalk](https://gitalk.github.io/) Add comments to each article and automatically submit project issues.
+This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli) , through this scaffold to quickly create a project structure, preview documents locally, use [Disqus](https://disqus.com/) Add comments to each article.
 
-### 二、Tree of project
+## Tree of project
 
 ```
 .
@@ -28,13 +28,13 @@ This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli)
 
 ```
 
-### 三、Local development preview
+## Local development preview
 
 ```
 cd docs/
 docsify serve ./ -o
 ```
 
-### 四、Deploy
+## Deploy
 
 This project is deployed on `GitHub Pages`. GitHub Pages supports reading files from the project's `docs/` folder.

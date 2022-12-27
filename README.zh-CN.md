@@ -1,12 +1,12 @@
 [English](./README.md) | **中文**
 
-<h2 align="center">Hui Wen's Blog</h2>
+<h1 align="center">Hui Wen's Blog</h1>
 
-### 一、依赖
+## 依赖
 
-本项目依赖 [docsify-cli](https://www.npmjs.com/package/docsify-cli)，通过此脚手架快速创建项目结构，本地预览文档，利用 [gitalk](https://gitalk.github.io/) 为每篇文章添加评论，自动提交项目 issues，
+本项目依赖 [docsify-cli](https://www.npmjs.com/package/docsify-cli)，通过此脚手架快速创建项目结构，本地预览文档，利用 [Disqus](https://disqus.com/) 提供评论系统支持。
 
-### 二、目录结构
+## 目录结构
 
 ```
 .
@@ -28,13 +28,13 @@
 
 ```
 
-### 三、本地预览
+## 本地预览
 
 ```
 cd docs/
 docsify serve ./ -o
 ```
 
-### 四、部署
+## 部署
 
 本项目部署在 `GitHub Pages` 上，GitHub Pages 支持从项目的 `docs/` 文件夹读取文件。
