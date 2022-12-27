@@ -4,7 +4,10 @@
 
 ## Dependencies
 
-This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli) , through this scaffold to quickly create a project structure, preview documents locally, use [Disqus](https://disqus.com/) Add comments to each article.
+* [docsify-cli](https://www.npmjs.com/package/docsify-cli)
+* [Disqus](https://disqus.com/)
+
+This project depends on docsify-cli scaffold to quickly create a project structure, preview documents locally, use Disqus add comments.
 
 ## Tree of project
 
@@ -15,7 +18,8 @@ This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli)
 ├── README.zh-CN.md             // README.zh-CN
 └── docs                        // Docsify Initialize the directory
     ├── _coverpage.md           // Cover page configuration
-    ├── _sidebar.md             // Sidebar configuration file
+    ├── _navbar.md              // Navbar configuration file
+    ├── _sidebar.md             // Sidebar configuration file 
     ├── .nojekyll               // Used to prevent GitHub Pages from ignoring files that start with an underscore
     ├── index.html              // Entry file, also a configuration file
     ├── README.md               // Render homepage content
@@ -24,7 +28,8 @@ This project depends on [docsify-cli](https://www.npmjs.com/package/docsify-cli)
     ├── book                    // Articles - Books
     ├── es6                     // Articles - ES6 basics
     ├── interesting             // Articles - interesting topics
-    └── vuejs                   // Articles - Vue.js related
+    ├── vue2                    // Articles - Vue.js 2
+    └── ...                     // Articles - xxx
 
 ```
 

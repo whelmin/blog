@@ -4,7 +4,10 @@
 
 ## 依赖
 
-本项目依赖 [docsify-cli](https://www.npmjs.com/package/docsify-cli)，通过此脚手架快速创建项目结构，本地预览文档，利用 [Disqus](https://disqus.com/) 提供评论系统支持。
+* [docsify-cli](https://www.npmjs.com/package/docsify-cli)
+* [Disqus](https://disqus.com/)
+  
+本项目通过 docsify-cli 快速创建项目结构，支持本地预览文档，另外利用 Disqus 提供评论系统支持。
 
 ## 目录结构
 
@@ -15,6 +18,7 @@
 ├── README.zh-CN.md             // README.zh-CN
 └── docs                        // docsify 初始化目录
     ├── _coverpage.md           // 封面页配置文件
+    ├── _navbar.md              // 导航栏配置文件
     ├── _sidebar.md             // 侧边栏配置文件
     ├── .nojekyll               // 用于阻止 GitHub Pages 会忽略掉下划线开头的文件
     ├── index.html              // 入口文件，也是配置文件
@@ -24,7 +28,8 @@
     ├── book                    // 文章 - 书籍
     ├── es6                     // 文章 - ES6 基础
     ├── interesting             // 文章 - 有趣的题目
-    └── vuejs                   // 文章 - Vue.js 相关
+    ├── vue2                    // 文章 - Vuejs 2
+    └── ...                     // 文章 - 持续更新中...
 
 ```
 
