@@ -1,7 +1,5 @@
 # localStorge,sessionStorge,cookie
 
-2016 年 04 月 27 日
-
 ## 写在前面
 
 网页刷新时，要保持原有数据或者状态，需要利用到本地存储技术，比较常见的是 `cookie`，`localstorge`，`sessionstorge`

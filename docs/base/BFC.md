@@ -1,7 +1,5 @@
 # BFC
 
-2019 年 03 月 24 日
-
 ## 定义
 
 `Block Formatting context`  （块级格式化上下文）

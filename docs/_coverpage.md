@@ -4,4 +4,4 @@
 
 > a Web Front-End Developer. ✌️
 
-[Get Started](/README)
+[Get Started](/me)
