@@ -1,4 +1,4 @@
-# localStorge,sessionStorge,cookie
+# 浏览器本地存储技术
 
 ## 写在前面
 

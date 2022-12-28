@@ -28,7 +28,7 @@
 
   - [页面生命周期和事件流](base/page-event-flow)
   - [JS异步编程](base/js-asynchronous-programming)
-  - [localStorge,sessionStorge,cookie](base/storage)
+  - [浏览器本地存储技术](base/storage)
   - [BFC](base/bfc)
   - [CSS居中](base/center)
   - [数组去重](base/array-deduplication)
