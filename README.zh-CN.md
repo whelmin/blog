@@ -14,15 +14,15 @@
 ```
 .
 ├── .gitignore                  // git忽略文件
-├── README.md                   // README
-├── README.zh-CN.md             // README.zh-CN
+├── README.md                   // 代码仓库文档
+├── README.zh-CN.md             // 代码仓库文档中文
 └── docs                        // docsify 初始化目录
     ├── _coverpage.md           // 封面页配置文件
     ├── _navbar.md              // 导航栏配置文件
     ├── _sidebar.md             // 侧边栏配置文件
     ├── .nojekyll               // 用于阻止 GitHub Pages 会忽略掉下划线开头的文件
     ├── index.html              // 入口文件，也是配置文件
-    ├── README.md               // 渲染主页内容
+    ├── README.md               // 渲染主页内容（必须存在，否则会渲染失败！）
     ├── advanced                // 文章 - 前端进阶
     ├── base                    // 文章 - 前端基础
     ├── book                    // 文章 - 书籍
@@ -36,8 +36,7 @@
 ## 本地预览
 
 ```
-cd docs/
-docsify serve ./ -o
+docsify serve ./docs -o
 ```
 
 ## 部署

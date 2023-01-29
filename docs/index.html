@@ -17,6 +17,12 @@
       title="docsify-darklight-theme"
       type="text/css"
     />
+    <!-- 自定义样式 -->
+    <style>
+      .medium-zoom-image {
+        width: 1000px;
+      }
+    </style>
   </meta>
 
   <body>
@@ -60,6 +66,7 @@
           errorText  : 'Error',
           successText: 'Copied'
         },
+        // 博文更新时间
         timeUpdater: {
           text: "<div style='font-size:13px;text-align:right;'>最后更新时间:&emsp;{docsify-updated}</div>",
           formatUpdated: "{YYYY} 年 {MM} 月 {DD} 日",

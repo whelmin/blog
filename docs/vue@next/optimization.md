@@ -8,7 +8,7 @@
 
 ### 2、有类型的 JavaScript：TypeScript
 
-![TypeScript](./_media/WX20200922-190124@2x.png)
+![typescript](./_media/WX20200922-190124@2x.png)
 
 ## 二、性能优化
 
