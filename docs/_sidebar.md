@@ -1,6 +1,6 @@
 * Vue 3
 
-  - [Hello Vue 3.0](vue@next/optimization)
+  - [Hello Vue 3.0](vue3/optimization)
 
 * Vue 2
 
